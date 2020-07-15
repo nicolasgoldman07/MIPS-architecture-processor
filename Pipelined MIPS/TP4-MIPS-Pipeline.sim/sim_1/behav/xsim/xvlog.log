@@ -1,0 +1,124 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/ip/blk_mem_gen_1/sim/blk_mem_gen_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ShiftLeft2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux2Inputs
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/PcAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PcAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/SignExtend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtend
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/RegisterFIle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/BranchAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/IF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs5bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux2Inputs5bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ALUControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/MEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux3Inputs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux3Inputs
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ForwardingUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ForwardingUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/HazardDetectionUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardDetectionUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/T_DatapathControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ProgramCounter' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ProgramCounter.v:3]
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstructionMemory' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/InstructionMemory.v:3]
+INFO: [VRFC 10-311] analyzing module PcAdder
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'PcAdder' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/PcAdder.v:3]
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ControlUnit' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ControlUnit.v:5]
+INFO: [VRFC 10-311] analyzing module RegisterFile
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegisterFile' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/RegisterFile.v:3]
+INFO: [VRFC 10-311] analyzing module SignExtend
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'SignExtend' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/SignExtend.v:3]
+INFO: [VRFC 10-311] analyzing module ShiftLeft2
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ShiftLeft2' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ShiftLeft2.v:3]
+INFO: [VRFC 10-311] analyzing module BranchAdder
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'BranchAdder' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/BranchAdder.v:3]
+INFO: [VRFC 10-311] analyzing module ALUControl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALUControl' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ALUControl.v:3]
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALU' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ALU.v:3]
+INFO: [VRFC 10-311] analyzing module DataMemory
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'DataMemory' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/DataMemory.v:3]
+INFO: [VRFC 10-311] analyzing module Mux2Inputs
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Mux2Inputs' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs.v:3]
+INFO: [VRFC 10-311] analyzing module Mux2Inputs5bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Mux2Inputs5bit' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs5bit.v:3]
+INFO: [VRFC 10-311] analyzing module IF_ID
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'IF_ID' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/IF_ID.v:3]
+INFO: [VRFC 10-311] analyzing module ID_EX
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ID_EX' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ID_EX.v:3]
+INFO: [VRFC 10-311] analyzing module EX_MEM
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'EX_MEM' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/EX_MEM.v:3]
+INFO: [VRFC 10-311] analyzing module MEM_WB
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'MEM_WB' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/MEM_WB.v:3]
+INFO: [VRFC 10-311] analyzing module Mux3Inputs
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Mux3Inputs' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux3Inputs.v:3]
+INFO: [VRFC 10-311] analyzing module ForwardingUnit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ForwardingUnit' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ForwardingUnit.v:3]
+INFO: [VRFC 10-311] analyzing module HazardDetectionUnit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'HazardDetectionUnit' [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/HazardDetectionUnit.v:3]
+INFO: [VRFC 10-311] analyzing module T_DatapathControl
+INFO: [VRFC 10-2458] undeclared symbol w_control_branchEq, assumed default net type wire [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/T_DatapathControl.v:180]
+INFO: [VRFC 10-2458] undeclared symbol w_control_branchNotEq, assumed default net type wire [C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/T_DatapathControl.v:181]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs9bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux2Inputs9bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/new/ShifLeft2Jump.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft2Jump
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/T_DatapathControl_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module T_DatapathControl_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ProgramCounter_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ShiftLeft2Jump_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft2Jump_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ControlUnit_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/DataMemory_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/RegisterFile_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ALUControl_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/T_Datapath_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module T_Datapath_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/Mux2Inputs_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux2Inputs_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/BranchAdder_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchAdder_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ShiftLeft2_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft2_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/SignExtend_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtend_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/InstructionMemory_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ALU_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/PcAdder_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PcAdder_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/T_Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sim_1/new/ShiftLeft2Jump.v" into library xil_defaultlib

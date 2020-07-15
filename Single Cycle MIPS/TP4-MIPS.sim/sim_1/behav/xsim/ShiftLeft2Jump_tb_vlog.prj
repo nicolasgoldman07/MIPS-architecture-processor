@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../TP4-MIPS.srcs/sources_1/new/ShifLeft2Jump.v" \
+"../../../../TP4-MIPS.srcs/sim_1/new/ShiftLeft2Jump_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

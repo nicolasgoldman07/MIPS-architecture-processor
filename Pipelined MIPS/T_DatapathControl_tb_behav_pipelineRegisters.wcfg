@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="T_DatapathControl_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="T_DatapathControl_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="13143fs"></ZoomStartTime>
+      <ZoomEndTime time="18454fs"></ZoomEndTime>
+      <Cursor1Time time="14000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="182"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="49" />
+   <wvobject fp_name="/T_DatapathControl_tb/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/i_reset" type="logic">
+      <obj_property name="ElementShortName">i_reset</obj_property>
+      <obj_property name="ObjectShortName">i_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/IF_ID1/i_pcAdd_IF" type="array">
+      <obj_property name="ElementShortName">i_pcAdd_IF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_pcAdd_IF[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/IF_ID1/o_pcAdd_ID" type="array">
+      <obj_property name="ElementShortName">o_pcAdd_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_pcAdd_ID[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/IF_ID1/i_im_IF" type="array">
+      <obj_property name="ElementShortName">i_im_IF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_im_IF[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/IF_ID1/o_im_ID" type="array">
+      <obj_property name="ElementShortName">o_im_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_im_ID[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/i_pcAdd_ID" type="array">
+      <obj_property name="ElementShortName">i_pcAdd_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_pcAdd_ID[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/o_pcAdd_EX" type="array">
+      <obj_property name="ElementShortName">o_pcAdd_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_pcAdd_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/i_readData1_ID" type="array">
+      <obj_property name="ElementShortName">i_readData1_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_readData1_ID[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/o_readData1_EX" type="array">
+      <obj_property name="ElementShortName">o_readData1_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_readData1_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/i_readData2_ID" type="array">
+      <obj_property name="ElementShortName">i_readData2_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_readData2_ID[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/o_readData2_EX" type="array">
+      <obj_property name="ElementShortName">o_readData2_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_readData2_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/i_signExtend_ID" type="array">
+      <obj_property name="ElementShortName">i_signExtend_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_signExtend_ID[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/o_signExtend_EX" type="array">
+      <obj_property name="ElementShortName">o_signExtend_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_signExtend_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/i_muxWrReg0_ID" type="array">
+      <obj_property name="ElementShortName">i_muxWrReg0_ID[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i_muxWrReg0_ID[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/o_muxWrReg0_EX" type="array">
+      <obj_property name="ElementShortName">o_muxWrReg0_EX[4:0]</obj_property>
+      <obj_property name="ObjectShortName">o_muxWrReg0_EX[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/i_muxWrReg1_ID" type="array">
+      <obj_property name="ElementShortName">i_muxWrReg1_ID[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i_muxWrReg1_ID[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ID_EX1/o_muxWrReg1_EX" type="array">
+      <obj_property name="ElementShortName">o_muxWrReg1_EX[4:0]</obj_property>
+      <obj_property name="ObjectShortName">o_muxWrReg1_EX[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/BranchAdder1/i_A" type="array">
+      <obj_property name="ElementShortName">i_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_A[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/BranchAdder1/i_B" type="array">
+      <obj_property name="ElementShortName">i_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_B[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/i_branchAdd_EX" type="array">
+      <obj_property name="ElementShortName">i_branchAdd_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_branchAdd_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/o_branchAdd_MEM" type="array">
+      <obj_property name="ElementShortName">o_branchAdd_MEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_branchAdd_MEM[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ForwardingUnit1/o_forwardA" type="array">
+      <obj_property name="ElementShortName">o_forwardA[1:0]</obj_property>
+      <obj_property name="ObjectShortName">o_forwardA[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ForwardingUnit1/o_forwardB" type="array">
+      <obj_property name="ElementShortName">o_forwardB[1:0]</obj_property>
+      <obj_property name="ObjectShortName">o_forwardB[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ALU1/i_aluOP" type="array">
+      <obj_property name="ElementShortName">i_aluOP[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i_aluOP[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ALU1/i_alu1" type="array">
+      <obj_property name="ElementShortName">i_alu1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_alu1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/ALU1/i_alu2" type="array">
+      <obj_property name="ElementShortName">i_alu2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_alu2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/i_ALUResult_EX" type="array">
+      <obj_property name="ElementShortName">i_ALUResult_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_ALUResult_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/o_ALUResult_MEM" type="array">
+      <obj_property name="ElementShortName">o_ALUResult_MEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_ALUResult_MEM[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/i_readData2_EX" type="array">
+      <obj_property name="ElementShortName">i_readData2_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_readData2_EX[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/o_readData2_MEM" type="array">
+      <obj_property name="ElementShortName">o_readData2_MEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_readData2_MEM[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/i_muxRegDst_EX" type="array">
+      <obj_property name="ElementShortName">i_muxRegDst_EX[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i_muxRegDst_EX[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/EX_MEM1/o_muxRegDst_MEM" type="array">
+      <obj_property name="ElementShortName">o_muxRegDst_MEM[4:0]</obj_property>
+      <obj_property name="ObjectShortName">o_muxRegDst_MEM[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_out_exMem_branch" type="logic">
+      <obj_property name="ElementShortName">w_out_exMem_branch</obj_property>
+      <obj_property name="ObjectShortName">w_out_exMem_branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_out_ALUZero" type="logic">
+      <obj_property name="ElementShortName">w_out_ALUZero</obj_property>
+      <obj_property name="ObjectShortName">w_out_ALUZero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_control_pcSrc" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">w_control_pcSrc</obj_property>
+      <obj_property name="ObjectShortName">w_control_pcSrc</obj_property>
+      <obj_property name="label">AND BRANCH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/i_readDataMem_MEM" type="array">
+      <obj_property name="ElementShortName">i_readDataMem_MEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_readDataMem_MEM[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/o_readDataMem_WB" type="array">
+      <obj_property name="ElementShortName">o_readDataMem_WB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_readDataMem_WB[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/i_ALUResult_MEM" type="array">
+      <obj_property name="ElementShortName">i_ALUResult_MEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_ALUResult_MEM[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/o_ALUResult_WB" type="array">
+      <obj_property name="ElementShortName">o_ALUResult_WB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_ALUResult_WB[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/RegisterFile1/i_writeData" type="array">
+      <obj_property name="ElementShortName">i_writeData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_writeData[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_out_memWb_memtoReg" type="logic">
+      <obj_property name="ElementShortName">w_out_memWb_memtoReg</obj_property>
+      <obj_property name="ObjectShortName">w_out_memWb_memtoReg</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_out_memWb_regWrite" type="logic">
+      <obj_property name="ElementShortName">w_out_memWb_regWrite</obj_property>
+      <obj_property name="ObjectShortName">w_out_memWb_regWrite</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/i_muxRegDst_MEM" type="array">
+      <obj_property name="ElementShortName">i_muxRegDst_MEM[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i_muxRegDst_MEM[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/o_muxRegDst_WB" type="array">
+      <obj_property name="ElementShortName">o_muxRegDst_WB[4:0]</obj_property>
+      <obj_property name="ObjectShortName">o_muxRegDst_WB[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/RegisterFile1/dataRegisters" type="array">
+      <obj_property name="ElementShortName">dataRegisters[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataRegisters[0:31][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/addra" type="array">
+      <obj_property name="ElementShortName">addra[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/dina" type="array">
+      <obj_property name="ElementShortName">dina[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/douta" type="array">
+      <obj_property name="ElementShortName">douta[31:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+   </wvobject>
+</wave_config>

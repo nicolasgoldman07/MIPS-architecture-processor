@@ -1,0 +1,50 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/ip/blk_mem_gen_1/sim/blk_mem_gen_1.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ProgramCounter.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/EX_MEM.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ShiftLeft2.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/PcAdder.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/InstructionMemory.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/SignExtend.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ControlUnit.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/RegisterFIle.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/BranchAdder.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/IF_ID.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs5bit.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ALUControl.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ALU.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/MEM_WB.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/DataMemory.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ID_EX.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/Mux3Inputs.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ForwardingUnit.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/HazardDetectionUnit.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/T_DatapathControl.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/Mux2Inputs9bit.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sources_1/new/ShifLeft2Jump.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/T_DatapathControl_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ProgramCounter_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ShiftLeft2Jump_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ControlUnit_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/DataMemory_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/RegisterFile_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ALUControl_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/T_Datapath_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/Mux2Inputs_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/BranchAdder_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ShiftLeft2_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/SignExtend_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/InstructionMemory_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ALU_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/PcAdder_tb.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/T_Datapath.v" \
+"../../../../TP4-MIPS-Pipeline.srcs/sim_1/new/ShiftLeft2Jump.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
