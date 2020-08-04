@@ -62,7 +62,7 @@ module T_DatapathControl
                                         
     wire        [N_BUS-1:0]         w_out_idEx_jump, w_out_idEx_pcAdd, w_out_idEx_rData1, w_out_idEx_rData2, w_out_idEx_signExtend;
     wire        [N_IN_REGFILE-1:0]  w_out_idEx_muxWrReg0, w_out_idEx_muxWrReg1, w_out_idEx_rReg1;
-    wire                            w_out_idEx_memtoReg, w_out_idEx_regWrite, w_out_idEx_ctrl_jumpReg, w_out_idEx_ctrl_jump, w_out_idEx_memRead, w_out_idEx_memWrite, w_out_idEx_branch, w_out_idEx_notEqBranch,
+    wire                            w_out_idEx_memtoReg, w_out_idEx_regWrite, w_out_idEx_ctrl_jumpReg, w_out_idEx_ctrl_jump, w_out_idEx_memRead, w_out_idEx_branch, w_out_idEx_notEqBranch,
                                         w_out_idEx_ALUSrc, w_out_idEx_ALUOp0, w_out_idEx_ALUOp1, w_out_idEx_regDst;
     
     wire        [N_BUS-1:0]         w_out_mux3_1, w_out_mux3_2;
@@ -75,7 +75,8 @@ module T_DatapathControl
     
     wire        [N_BUS-1:0]         w_out_exMem_ALURes, w_out_exMem_rData2, w_out_sl2_ALURes, w_out_jumpMux;
     wire        [N_IN_REGFILE-1:0]  w_out_exMem_muxRegDst;
-    wire                            w_out_exMem_memtoReg, w_out_exMem_regWrite, w_out_exMem_ctrl_jumpReg, w_out_exMem_ctrl_jump, w_out_exMem_memRead, w_out_exMem_memWrite, w_out_exMem_branch, w_out_exMem_notEqBranch, w_out_exMem_ALUZero;
+    wire                            w_out_exMem_memtoReg, w_out_exMem_regWrite, w_out_exMem_ctrl_jumpReg, w_out_exMem_ctrl_jump, w_out_exMem_memRead, w_out_exMem_branch, w_out_exMem_notEqBranch, w_out_exMem_ALUZero;
+    wire        [3:0]               w_out_exMem_memWrite, w_out_idEx_memWrite;
     
     wire        [N_BUS-1:0]         w_out_dm_rData;
     
@@ -112,7 +113,7 @@ module T_DatapathControl
     // Mid-Reg ID/E
     ID_EX               ID_EX1                     (i_clk, i_reset, w_control_pcSrc,
                                                        w_out_controlMux[7], w_out_controlMux[6], w_out_idEx_memtoReg, w_out_idEx_regWrite,
-                                                       w_out_controlMux[11], w_out_controlMux[10], w_out_controlMux[5], w_out_controlMux[4], w_out_controlMux[3], w_out_controlMux[2], w_out_idEx_ctrl_jumpReg, w_out_idEx_ctrl_jump, w_out_idEx_memRead, w_out_idEx_memWrite, w_out_idEx_branch, w_out_idEx_notEqBranch,
+                                                       w_out_controlMux[11], w_out_controlMux[10], w_out_controlMux[5], {4{w_out_controlMux[4]}}, w_out_controlMux[3], w_out_controlMux[2], w_out_idEx_ctrl_jumpReg, w_out_idEx_ctrl_jump, w_out_idEx_memRead, w_out_idEx_memWrite, w_out_idEx_branch, w_out_idEx_notEqBranch,
                                                        w_out_controlMux[8], w_out_controlMux[0], w_out_controlMux[1], w_out_controlMux[9], w_out_idEx_ALUSrc, w_out_idEx_ALUOp0, w_out_idEx_ALUOp1, w_out_idEx_regDst,
                                                        {w_out_ifId_pcAdd[31:28], w_out_sl2Jump}, w_out_ifId_pcAdd, w_out_rf_rData1, w_out_rf_rData2, w_out_signExtend, w_out_ifId_im[20:16], w_out_ifId_im[15:11],
                                                        w_out_idEx_jump, w_out_idEx_pcAdd, w_out_idEx_rData1, w_out_idEx_rData2, w_out_idEx_signExtend, w_out_idEx_muxWrReg0, w_out_idEx_muxWrReg1,
@@ -163,7 +164,7 @@ module T_DatapathControl
     blk_mem_gen_0       InstMemory1                 (.clka(i_clk), .wea(), .addra(w_out_pc), .dina(), .douta(w_out_im) );
 
     //DataMemory          DataMemory1                (i_clk, w_out_exMem_memWrite, w_out_exMem_memRead, w_out_exMem_ALURes, w_out_exMem_rData2, w_out_dm_rData);    
-    blk_mem_gen_1       DataMemory1                 (.clka(i_clk), .wea(w_out_exMem_memWrite), .addra(w_out_exMem_ALURes), .dina(w_out_exMem_rData2), .douta(w_out_dm_rData) );
+    blk_mem_gen_1       DataMemory1                 (.clka(i_clk), .wea(w_out_exMem_memWrite), .addra(w_out_exMem_ALURes << 2), .dina(w_out_exMem_rData2), .douta(w_out_dm_rData) );
     
     // Jump Register
     ShiftLeft2          ShiftLeft2JumpReg           (w_out_exMem_ALURes, w_out_sl2_ALURes);

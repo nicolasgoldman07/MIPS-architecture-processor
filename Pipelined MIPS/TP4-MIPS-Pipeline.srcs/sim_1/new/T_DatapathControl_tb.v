@@ -18,7 +18,7 @@ module T_DatapathControl_tb();
 
     initial
         begin
-		  #0      i_reset = 1'b1; i_clk = 1'b0;
+		  #0      i_reset = 1'b1; i_clk = 1'b1;
 		  #5      i_reset = 1'b0;
 		  
 		end

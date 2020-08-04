@@ -17,13 +17,13 @@ module EX_MEM
   input                         i_ctrl_jumpReg_EX,
   input                         i_ctrl_jump_EX,
   input                         i_ctrl_memRead_EX,
-  input                         i_ctrl_memWrite_EX,
+  input       [3:0]             i_ctrl_memWrite_EX,
   input                         i_ctrl_branch_EX,
   input                         i_ctrl_notEqBranch_EX,
   output reg                    o_ctrl_jumpReg_MEM,
   output reg                    o_ctrl_jump_MEM,
   output reg                    o_ctrl_memRead_MEM,
-  output reg                    o_ctrl_memWrite_MEM,
+  output reg   [3:0]            o_ctrl_memWrite_MEM,
   output reg                    o_ctrl_branch_MEM,
   output reg                    o_ctrl_notEqBranch_MEM,
   
@@ -51,7 +51,7 @@ module EX_MEM
           o_ctrl_jumpReg_MEM        <= 1'b0;
           o_ctrl_jump_MEM           <= 1'b0;
           o_ctrl_memRead_MEM        <= 1'b0;          
-          o_ctrl_memWrite_MEM       <= 1'b0;         
+          o_ctrl_memWrite_MEM       <= 4'd0;         
           o_ctrl_branch_MEM         <= 1'b0;  
           o_ctrl_notEqBranch_MEM    <= 1'b0;        
           o_ctrl_ALUZero_MEM        <= 1'b0;          
@@ -68,7 +68,7 @@ module EX_MEM
           o_ctrl_jumpReg_MEM        <= 1'b0;
           o_ctrl_jump_MEM           <= 1'b0;
           o_ctrl_memRead_MEM        <= 1'b0;          
-          o_ctrl_memWrite_MEM       <= 1'b0;         
+          o_ctrl_memWrite_MEM       <= 4'd0;         
           o_ctrl_branch_MEM         <= 1'b0; 
           o_ctrl_notEqBranch_MEM    <= 1'b0;         
           o_ctrl_ALUZero_MEM        <= 1'b0;

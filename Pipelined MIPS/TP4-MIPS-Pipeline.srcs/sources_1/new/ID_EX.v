@@ -17,13 +17,13 @@ module ID_EX
   input                         i_ctrl_jumpReg_ID,
   input                         i_ctrl_jump_ID,
   input                         i_ctrl_memRead_ID,
-  input                         i_ctrl_memWrite_ID,
+  input      [3:0]              i_ctrl_memWrite_ID,
   input                         i_ctrl_branch_ID,
   input                         i_ctrl_notEqBranch_ID,
   output reg                    o_ctrl_jumpReg_EX,
   output reg                    o_ctrl_jump_EX,
   output reg                    o_ctrl_memRead_EX,
-  output reg                    o_ctrl_memWrite_EX,
+  output reg  [3:0]             o_ctrl_memWrite_EX,
   output reg                    o_ctrl_branch_EX,
   output reg                    o_ctrl_notEqBranch_EX,
 
@@ -71,7 +71,7 @@ module ID_EX
           o_ctrl_jumpReg_EX         <= 1'b0;
           o_ctrl_jump_EX            <= 1'b0;
           o_ctrl_memRead_EX         <= 1'b0;
-          o_ctrl_memWrite_EX        <= 1'b0;
+          o_ctrl_memWrite_EX        <= 4'd0;
           o_ctrl_branch_EX          <= 1'b0;
           o_ctrl_notEqBranch_EX     <= 1'b0;
           o_ctrl_ALUSrc_EX          <= 1'b0;
@@ -95,7 +95,7 @@ module ID_EX
           o_ctrl_jumpReg_EX         <= 1'b0;
           o_ctrl_jump_EX            <= 1'b0;
           o_ctrl_memRead_EX         <= 1'b0;
-          o_ctrl_memWrite_EX        <= 1'b0;
+          o_ctrl_memWrite_EX        <= 4'd0;
           o_ctrl_branch_EX          <= 1'b0;
           o_ctrl_notEqBranch_EX     <= 1'b0;          
           o_ctrl_ALUSrc_EX          <= 1'b0;
