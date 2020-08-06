@@ -141,13 +141,15 @@ module ControlUnit
                 begin
                     control_signals <= 12'b011001000001;
                 end
-             6'b111111: // NOP
+            6'b111111: // NOP
                 begin
                     control_signals <= 12'b000000000000;
-                end   
-             
-
-                            
+                end
+            6'b101010: // HALT
+                begin
+                    control_signals <= 12'b000000000000;
+                end    
+                                         
             default: control_signals <= 12'b000000000000;
         endcase
     

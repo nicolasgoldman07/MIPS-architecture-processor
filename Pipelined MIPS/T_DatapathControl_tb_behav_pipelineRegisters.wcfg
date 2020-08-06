@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="13143fs"></ZoomStartTime>
-      <ZoomEndTime time="18454fs"></ZoomEndTime>
-      <Cursor1Time time="14000fs"></Cursor1Time>
+      <ZoomStartTime time="1866fs"></ZoomStartTime>
+      <ZoomEndTime time="19157fs"></ZoomEndTime>
+      <Cursor1Time time="6436fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="182"></ValueColumnWidth>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="49" />
+   <WVObjectSize size="51" />
    <wvobject fp_name="/T_DatapathControl_tb/i_clk" type="logic">
       <obj_property name="ElementShortName">i_clk</obj_property>
       <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -277,7 +277,13 @@
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/RegisterFile1/dataRegisters" type="array">
       <obj_property name="ElementShortName">dataRegisters[0:31][31:0]</obj_property>
       <obj_property name="ObjectShortName">dataRegisters[0:31][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/wea" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">wea[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[3:0]</obj_property>
+      <obj_property name="label">writeEn_DM[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/addra" type="array">
       <obj_property name="ElementShortName">addra[31:0]</obj_property>
@@ -290,5 +296,12 @@
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/douta" type="array">
       <obj_property name="ElementShortName">douta[31:0]</obj_property>
       <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/inst/\native_mem_mapped_module.blk_mem_gen_v8_4_4_inst /memory" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">memory[0:127][31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:127][31:0]</obj_property>
+      <obj_property name="label">DataMem[0:127][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

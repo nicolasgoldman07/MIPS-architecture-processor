@@ -22,13 +22,13 @@ module ProgramCounter
         begin
             regR <= 32'b0;
         end
-      else if (!i_pcWrite)
+      else if (i_pcWrite)
         begin
-            regR <= o_pc;   
+            regR <= i_pc;   
         end
       else
         begin
-          regR <= i_pc;
+            regR <= regR;
         end
     end
 

@@ -30,7 +30,8 @@ module T_DatapathControl
     parameter                   N_MUX_FU        = 2,
     parameter                   N_MUX_CTRL      = 12
 )
-(    
+(   
+    input                           i_global_enable, 
     input                           i_clk,
     input                           i_reset,
     output      [31:0]              o_PCSrc,
@@ -87,13 +88,13 @@ module T_DatapathControl
     
     // BLOQUES BASANDONOS EN FILE "Pipeline.pptx" CON LA CONSIGNA DEL TP
     // Instruction Fetch
-    ProgramCounter      ProgramCounter1            (w_in_pc, i_clk, i_reset, w_out_hd_pcWrite, w_out_pc);
+    ProgramCounter      ProgramCounter1            (w_in_pc, i_clk, i_reset, w_out_hd_pcWrite && i_global_enable, w_out_pc);
     //InstructionMemory   InstructionMemory1         (w_out_pc, w_out_im);
     PcAdder             PcAdder1                   (w_out_pc, w_out_pcAdd);
     Mux2Inputs          MuxPcSrc1                  (w_control_pcSrc, w_out_pcAdd, w_out_exMem_branchAdd, w_out_mux_pc);
    
     // Mid-Reg IF/I
-    IF_ID               IF_ID1                     (i_clk, i_reset, w_control_pcSrc, w_out_im, w_out_pcAdd, w_out_hd_ifIdWrite, w_out_ifId_im, w_out_ifId_pcAdd);
+    IF_ID               IF_ID1                     (i_global_enable, i_clk, i_reset, w_control_pcSrc, w_out_im, w_out_pcAdd, w_out_hd_ifIdWrite, w_out_ifId_im, w_out_ifId_pcAdd);
    
     // HAZARD DETECTION UNI
     HazardDetectionUnit HazardDetectionUnit1       (w_out_ifId_im[25:21], w_out_ifId_im[20:16], w_out_idEx_muxWrReg0, w_out_idEx_memRead, w_control_pcSrc, w_out_hd_pcWrite, w_out_hd_ifIdWrite, w_out_hd_muxStall); 
@@ -111,7 +112,7 @@ module T_DatapathControl
                                                        w_control_regWrite, w_control_memRead, w_control_memWrite, w_control_branch, w_control_notEqBranch,
                                                        w_control_ALUOp1, w_control_ALUOp0}, w_out_controlMux);
     // Mid-Reg ID/E
-    ID_EX               ID_EX1                     (i_clk, i_reset, w_control_pcSrc,
+    ID_EX               ID_EX1                     (i_global_enable, i_clk, i_reset, w_control_pcSrc,
                                                        w_out_controlMux[7], w_out_controlMux[6], w_out_idEx_memtoReg, w_out_idEx_regWrite,
                                                        w_out_controlMux[11], w_out_controlMux[10], w_out_controlMux[5], {4{w_out_controlMux[4]}}, w_out_controlMux[3], w_out_controlMux[2], w_out_idEx_ctrl_jumpReg, w_out_idEx_ctrl_jump, w_out_idEx_memRead, w_out_idEx_memWrite, w_out_idEx_branch, w_out_idEx_notEqBranch,
                                                        w_out_controlMux[8], w_out_controlMux[0], w_out_controlMux[1], w_out_controlMux[9], w_out_idEx_ALUSrc, w_out_idEx_ALUOp0, w_out_idEx_ALUOp1, w_out_idEx_regDst,
@@ -136,7 +137,7 @@ module T_DatapathControl
     ForwardingUnit      ForwardingUnit1            (w_out_idEx_rReg1, w_out_idEx_muxWrReg0, w_out_exMem_muxRegDst, w_out_memWb_muxRegDst, w_out_exMem_regWrite, w_out_memWb_regWrite, w_out_fu1, w_out_fu2);
    
     // Mid-Reg EX/ME
-    EX_MEM              EX_MEM1                    (i_clk, i_reset, w_control_pcSrc,
+    EX_MEM              EX_MEM1                    (i_global_enable, i_clk, i_reset, w_control_pcSrc,
                                                        w_out_idEx_memtoReg, w_out_idEx_regWrite, w_out_exMem_memtoReg, w_out_exMem_regWrite,
                                                        w_out_idEx_ctrl_jumpReg, w_out_idEx_ctrl_jump, w_out_idEx_memRead, w_out_idEx_memWrite, w_out_idEx_branch, w_out_idEx_notEqBranch, w_out_exMem_ctrl_jumpReg, w_out_exMem_ctrl_jump, w_out_exMem_memRead, w_out_exMem_memWrite, w_out_exMem_branch, w_out_exMem_notEqBranch,
                                                        w_out_ALUZero, w_out_exMem_ALUZero, w_out_idEx_jump, w_out_branchAdd, w_out_ALURes, w_out_mux3_2, w_out_muxRegDst, w_out_exMem_jump, w_out_exMem_branchAdd, w_out_exMem_ALURes, w_out_exMem_rData2, w_out_exMem_muxRegDst);
@@ -145,7 +146,7 @@ module T_DatapathControl
     //DataMemory          DataMemory1                (i_clk, w_out_exMem_memWrite, w_out_exMem_memRead, w_out_exMem_ALURes, w_out_exMem_rData2, w_out_dm_rData);
    
     // Mid-Reg MEM/W
-    MEM_WB              MEM_WB1                    (i_clk, i_reset,
+    MEM_WB              MEM_WB1                    (i_global_enable, i_clk, i_reset,
                                                        w_out_exMem_memtoReg, w_out_exMem_regWrite, w_out_memWb_memtoReg, w_out_memWb_regWrite, 
                                                        w_out_dm_rData, w_out_memWb_rData,
                                                        w_out_exMem_ALURes, w_out_memWb_ALURes,

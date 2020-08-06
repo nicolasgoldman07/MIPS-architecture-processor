@@ -7,7 +7,7 @@ module EX_MEM
   parameter                     N_BUS_MUX   = 5
 )
 (
-  input                         i_clk, i_reset, i_branchNop,
+  input                         i_global_enable, i_clk, i_reset, i_branchNop,
   // CONTROL WB:
   input                         i_ctrl_memtoReg_EX,
   input                         i_ctrl_regWrite_EX,
@@ -61,38 +61,58 @@ module EX_MEM
           o_readData2_MEM           <= 32'b0;
           o_muxRegDst_MEM           <= 5'b0;
         end
-      else if (i_branchNop)
+      else if (i_global_enable)
         begin
-          o_ctrl_memtoReg_MEM       <= 1'b0;
-          o_ctrl_regWrite_MEM       <= 1'b0;
-          o_ctrl_jumpReg_MEM        <= 1'b0;
-          o_ctrl_jump_MEM           <= 1'b0;
-          o_ctrl_memRead_MEM        <= 1'b0;          
-          o_ctrl_memWrite_MEM       <= 4'd0;         
-          o_ctrl_branch_MEM         <= 1'b0; 
-          o_ctrl_notEqBranch_MEM    <= 1'b0;         
-          o_ctrl_ALUZero_MEM        <= 1'b0;
-//          o_branchAdd_MEM           <= 32'b0;          
-//          o_ALUResult_MEM           <= 32'b0;          
-//          o_readData2_MEM           <= 32'b0;
-//          o_muxRegDst_MEM           <= 5'b0;
+          if (i_branchNop)
+            begin
+              o_ctrl_memtoReg_MEM       <= 1'b0;
+              o_ctrl_regWrite_MEM       <= 1'b0;
+              o_ctrl_jumpReg_MEM        <= 1'b0;
+              o_ctrl_jump_MEM           <= 1'b0;
+              o_ctrl_memRead_MEM        <= 1'b0;          
+              o_ctrl_memWrite_MEM       <= 4'd0;         
+              o_ctrl_branch_MEM         <= 1'b0; 
+              o_ctrl_notEqBranch_MEM    <= 1'b0;         
+              o_ctrl_ALUZero_MEM        <= 1'b0;
+    //          o_branchAdd_MEM           <= 32'b0;          
+    //          o_ALUResult_MEM           <= 32'b0;          
+    //          o_readData2_MEM           <= 32'b0;
+    //          o_muxRegDst_MEM           <= 5'b0;
+            end
+          else
+            begin
+              o_ctrl_memtoReg_MEM       <= i_ctrl_memtoReg_EX;
+              o_ctrl_regWrite_MEM       <= i_ctrl_regWrite_EX;
+              o_ctrl_jumpReg_MEM        <= i_ctrl_jumpReg_EX;
+              o_ctrl_jump_MEM           <= i_ctrl_jump_EX;
+              o_ctrl_memRead_MEM        <= i_ctrl_memRead_EX;          
+              o_ctrl_memWrite_MEM       <= i_ctrl_memWrite_EX;        
+              o_ctrl_branch_MEM         <= i_ctrl_branch_EX;  
+              o_ctrl_notEqBranch_MEM    <= i_ctrl_notEqBranch_EX;         
+              o_ctrl_ALUZero_MEM        <= i_ctrl_ALUZero_EX;    
+              o_pcJump_MEM              <= i_pcJump_EX;     
+              o_branchAdd_MEM           <= i_branchAdd_EX;          
+              o_ALUResult_MEM           <= i_ALUResult_EX;          
+              o_readData2_MEM           <= i_readData2_EX;
+              o_muxRegDst_MEM           <= i_muxRegDst_EX;
+            end
         end
       else
         begin
-          o_ctrl_memtoReg_MEM       <= i_ctrl_memtoReg_EX;
-          o_ctrl_regWrite_MEM       <= i_ctrl_regWrite_EX;
-          o_ctrl_jumpReg_MEM        <= i_ctrl_jumpReg_EX;
-          o_ctrl_jump_MEM           <= i_ctrl_jump_EX;
-          o_ctrl_memRead_MEM        <= i_ctrl_memRead_EX;          
-          o_ctrl_memWrite_MEM       <= i_ctrl_memWrite_EX;        
-          o_ctrl_branch_MEM         <= i_ctrl_branch_EX;  
-          o_ctrl_notEqBranch_MEM    <= i_ctrl_notEqBranch_EX;         
-          o_ctrl_ALUZero_MEM        <= i_ctrl_ALUZero_EX;    
-          o_pcJump_MEM              <= i_pcJump_EX;     
-          o_branchAdd_MEM           <= i_branchAdd_EX;          
-          o_ALUResult_MEM           <= i_ALUResult_EX;          
-          o_readData2_MEM           <= i_readData2_EX;
-          o_muxRegDst_MEM           <= i_muxRegDst_EX;
+              o_ctrl_memtoReg_MEM       <= o_ctrl_memtoReg_MEM;
+              o_ctrl_regWrite_MEM       <= o_ctrl_regWrite_MEM;
+              o_ctrl_jumpReg_MEM        <= o_ctrl_jumpReg_MEM;
+              o_ctrl_jump_MEM           <= o_ctrl_jump_MEM;
+              o_ctrl_memRead_MEM        <= o_ctrl_memRead_MEM;          
+              o_ctrl_memWrite_MEM       <= o_ctrl_memWrite_MEM;        
+              o_ctrl_branch_MEM         <= o_ctrl_branch_MEM;  
+              o_ctrl_notEqBranch_MEM    <= o_ctrl_notEqBranch_MEM;         
+              o_ctrl_ALUZero_MEM        <= o_ctrl_ALUZero_MEM;    
+              o_pcJump_MEM              <= o_pcJump_MEM;     
+              o_branchAdd_MEM           <= o_branchAdd_MEM;          
+              o_ALUResult_MEM           <= o_ALUResult_MEM;          
+              o_readData2_MEM           <= o_readData2_MEM;
+              o_muxRegDst_MEM           <= o_muxRegDst_MEM;
         end
     end
 
