@@ -1,18 +1,18 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Tue Jul 14 21:44:06 2020
+// Date        : Sun Jul 12 19:36:25 2020
 // Host        : win10-nico running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos
-//               Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_sim_netlist.v}
-// Design      : blk_mem_gen_0
+// Command     : write_verilog -force -mode funcsim -rename_top blk_mem_gen_0 -prefix
+//               blk_mem_gen_0_ InstructionMemory_sim_netlist.v
+// Design      : InstructionMemory
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a35ticpg236-1L
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "blk_mem_gen_0,blk_mem_gen_v8_4_4,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_4,Vivado 2019.2" *) 
+(* CHECK_LICENSE_TYPE = "InstructionMemory,blk_mem_gen_v8_4_4,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_4,Vivado 2019.2" *) 
 (* NotValidForBitStream *)
 module blk_mem_gen_0
    (clka,
@@ -93,10 +93,10 @@ module blk_mem_gen_0
   (* C_HAS_SOFTECC_OUTPUT_REGS_B = "0" *) 
   (* C_INITA_VAL = "0" *) 
   (* C_INITB_VAL = "0" *) 
-  (* C_INIT_FILE = "blk_mem_gen_0.mem" *) 
-  (* C_INIT_FILE_NAME = "blk_mem_gen_0.mif" *) 
+  (* C_INIT_FILE = "InstructionMemory.mem" *) 
+  (* C_INIT_FILE_NAME = "no_coe_file_loaded" *) 
   (* C_INTERFACE_TYPE = "0" *) 
-  (* C_LOAD_INIT_FILE = "1" *) 
+  (* C_LOAD_INIT_FILE = "0" *) 
   (* C_MEM_TYPE = "0" *) 
   (* C_MUX_PIPELINE_STAGES = "0" *) 
   (* C_PRIM_TYPE = "1" *) 
@@ -194,7 +194,6 @@ module blk_mem_gen_0
         .web({1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module blk_mem_gen_0_blk_mem_gen_generic_cstr
    (douta,
     clka,
@@ -221,7 +220,6 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module blk_mem_gen_0_blk_mem_gen_prim_width
    (douta,
     clka,
@@ -240,7 +238,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
   wire [31:0]douta;
   wire [3:0]wea;
 
-  blk_mem_gen_0_blk_mem_gen_prim_wrapper_init \prim_init.ram 
+  blk_mem_gen_0_blk_mem_gen_prim_wrapper \prim_noinit.ram 
        (.addra(addra),
         .clka(clka),
         .dina(dina),
@@ -248,8 +246,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
+module blk_mem_gen_0_blk_mem_gen_prim_wrapper
    (douta,
     clka,
     addra,
@@ -261,17 +258,16 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
   input [31:0]dina;
   input [3:0]wea;
 
-  wire \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_32 ;
-  wire \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_33 ;
-  wire \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_34 ;
-  wire \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_35 ;
+  wire \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_32 ;
+  wire \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_33 ;
+  wire \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_34 ;
+  wire \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_35 ;
   wire [6:0]addra;
   wire clka;
   wire [31:0]dina;
   wire [31:0]douta;
   wire [3:0]wea;
 
-  (* bmm_info_memory_device = "[31:0][0:511]" *) 
   (* box_type = "PRIMITIVE" *) 
   RAMB18E1 #(
     .DOA_REG(0),
@@ -284,11 +280,11 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
     .INITP_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_06(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_07(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_00(256'h329500033C1400E1158AFFFE214A0001014260208C17000CAC4A000A200A000A),
-    .INIT_01(256'h2002000220020001080000113682000620020003200200022002000110350003),
-    .INIT_02(256'h008430200044E0250094D8208C04000C200A000D200201F42002000120020003),
-    .INIT_03(256'h8C500002ACA2000100427020004268240045602500A110228C1D0006AC1B0006),
-    .INIT_04(256'h0000000000000000000000000000000000000000000000000000000001400008),
+    .INIT_00(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_01(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_02(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_03(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_04(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_06(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_07(256'h0000000000000000000000000000000000000000000000000000000000000000),
@@ -373,7 +369,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
     .WRITE_MODE_B("WRITE_FIRST"),
     .WRITE_WIDTH_A(18),
     .WRITE_WIDTH_B(18)) 
-    \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram 
+    \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram 
        (.ADDRARDADDR({1'b0,1'b0,addra,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ADDRBWRADDR({1'b0,1'b0,addra,1'b1,1'b0,1'b0,1'b0,1'b0}),
         .CLKARDCLK(clka),
@@ -384,8 +380,8 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
         .DIPBDIP({1'b0,1'b0}),
         .DOADO(douta[15:0]),
         .DOBDO(douta[31:16]),
-        .DOPADOP({\DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_32 ,\DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_33 }),
-        .DOPBDOP({\DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_34 ,\DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_35 }),
+        .DOPADOP({\DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_32 ,\DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_33 }),
+        .DOPBDOP({\DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_34 ,\DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_35 }),
         .ENARDEN(1'b1),
         .ENBWREN(1'b1),
         .REGCEAREGCE(1'b0),
@@ -398,7 +394,6 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
         .WEBWE({1'b0,1'b0,wea[3:2]}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module blk_mem_gen_0_blk_mem_gen_top
    (douta,
     clka,
@@ -438,8 +433,8 @@ endmodule
 (* C_HAS_MEM_OUTPUT_REGS_B = "0" *) (* C_HAS_MUX_OUTPUT_REGS_A = "0" *) (* C_HAS_MUX_OUTPUT_REGS_B = "0" *) 
 (* C_HAS_REGCEA = "0" *) (* C_HAS_REGCEB = "0" *) (* C_HAS_RSTA = "0" *) 
 (* C_HAS_RSTB = "0" *) (* C_HAS_SOFTECC_INPUT_REGS_A = "0" *) (* C_HAS_SOFTECC_OUTPUT_REGS_B = "0" *) 
-(* C_INITA_VAL = "0" *) (* C_INITB_VAL = "0" *) (* C_INIT_FILE = "blk_mem_gen_0.mem" *) 
-(* C_INIT_FILE_NAME = "blk_mem_gen_0.mif" *) (* C_INTERFACE_TYPE = "0" *) (* C_LOAD_INIT_FILE = "1" *) 
+(* C_INITA_VAL = "0" *) (* C_INITB_VAL = "0" *) (* C_INIT_FILE = "InstructionMemory.mem" *) 
+(* C_INIT_FILE_NAME = "no_coe_file_loaded" *) (* C_INTERFACE_TYPE = "0" *) (* C_LOAD_INIT_FILE = "0" *) 
 (* C_MEM_TYPE = "0" *) (* C_MUX_PIPELINE_STAGES = "0" *) (* C_PRIM_TYPE = "1" *) 
 (* C_READ_DEPTH_A = "128" *) (* C_READ_DEPTH_B = "128" *) (* C_READ_LATENCY_A = "1" *) 
 (* C_READ_LATENCY_B = "1" *) (* C_READ_WIDTH_A = "32" *) (* C_READ_WIDTH_B = "32" *) 
@@ -450,7 +445,7 @@ endmodule
 (* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) (* C_WRITE_DEPTH_A = "128" *) 
 (* C_WRITE_DEPTH_B = "128" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) (* C_XDEVICEFAMILY = "artix7" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module blk_mem_gen_0_blk_mem_gen_v8_4_4
    (clka,
     rsta,
@@ -748,7 +743,6 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
 module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
    (douta,
     clka,
