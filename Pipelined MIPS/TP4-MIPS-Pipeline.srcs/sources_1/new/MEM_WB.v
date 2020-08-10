@@ -7,7 +7,7 @@ module MEM_WB
   parameter                     N_BUS_MUX   = 5
 )
 (
-  input                         i_clk, i_reset,
+  input                         i_global_en, i_clk, i_reset,
   // CONTROL WB:
   input                         i_ctrl_memtoReg_MEM,
   input                         i_ctrl_regWrite_MEM,
@@ -24,7 +24,7 @@ module MEM_WB
   output reg    [N_BUS_MUX-1:0] o_muxRegDst_WB
 );
   
-  always @(negedge i_clk) 
+  always @(posedge i_clk) 
     begin
       if (i_reset)
         begin
@@ -33,7 +33,7 @@ module MEM_WB
           o_readDataMem_WB          <= 32'b0;          
           o_ALUResult_WB            <= 32'b0;         
           o_muxRegDst_WB            <= 5'b0;          
-        end
+        end 
       else
         begin
           o_ctrl_memtoReg_WB        <= i_ctrl_memtoReg_MEM;

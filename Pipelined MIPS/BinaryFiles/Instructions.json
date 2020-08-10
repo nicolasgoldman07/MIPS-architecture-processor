@@ -1,0 +1,433 @@
+{
+  "instructions": [
+    {
+      "name": "Load Word",
+      "regex": "(?:[\\t ]*)(\\bLW\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "100011",
+      "funcode": null
+    },
+    {
+      "name": "Store Word",
+      "regex": "(?:[\\t ]*)(\\bSW\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "101011",
+      "funcode": null
+    },
+    {
+      "name": "Add",
+      "regex": "(?:[\\t ]*)(\\bADD\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100000"
+    },
+    {
+      "name": "Substract",
+      "regex": "(?:[\\t ]*)(\\bSUB\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100010"
+    },
+    {
+      "name": "And",
+      "regex": "(?:[\\t ]*)(\\bAND\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100100"
+    },
+    {
+      "name": "Or",
+      "regex": "(?:[\\t ]*)(\\bOR\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100101"
+    },
+    {
+      "name": "Set if less than",
+      "regex": "(?:[\\t ]*)(\\bSLT\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000101010"
+    },
+    {
+      "name": "Branch if equals",
+      "regex": "(?:[\\t ]*)(\\bBEQ\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "000100",
+      "funcode": null
+    },
+    {
+      "name": "Jump",
+      "regex": "(?:[\\t ]*)(\\bJ\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [{ "group": 2, "nbits": 26 }],
+      "opcode": "000010",
+      "funcode": null
+    },
+    {
+      "name": "Shift left logical",
+      "regex": "(?:[\\t ]*)(\\bSLL\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 5 }
+      ],
+      "opcode": "00000000000",
+      "funcode": "000000"
+    },
+    {
+      "name": "Shift right logical",
+      "regex": "(?:[\\t ]*)(\\bSRL\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 5 }
+      ],
+      "opcode": "00000000000",
+      "funcode": "000010"
+    },
+    {
+      "name": "Shift right arithmetic",
+      "regex": "(?:[\\t ]*)(\\bSRA\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 5 }
+      ],
+      "opcode": "00000000000",
+      "funcode": "000011"
+    },
+    {
+      "name": "Shift left logical variable",
+      "regex": "(?:[\\t ]*)(\\bSLLV\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000000100"
+    },
+    {
+      "name": "Shift right logical variable",
+      "regex": "(?:[\\t ]*)(\\bSRLV\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000000110"
+    },
+    {
+      "name": "Shift right arithmetic variable",
+      "regex": "(?:[\\t ]*)(\\bSRAV\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000000111"
+    },
+    {
+      "name": "Add unsigned",
+      "regex": "(?:[\\t ]*)(\\bADDU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100001"
+    },
+    {
+      "name": "Substract unsigned",
+      "regex": "(?:[\\t ]*)(\\bSUBU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100011"
+    },
+    {
+      "name": "Xor",
+      "regex": "(?:[\\t ]*)(\\bXOR\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100110"
+    },
+    {
+      "name": "Nor",
+      "regex": "(?:[\\t ]*)(\\bNOR\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000100111"
+    },
+    {
+      "name": "Set if less than unsigned",
+      "regex": "(?:[\\t ]*)(\\bSLTU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000101011"
+    },
+    {
+      "name": "Load byte",
+      "regex": "(?:[\\t ]*)(\\bLB\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "100000",
+      "funcode": null
+    },
+    {
+      "name": "Load halfword",
+      "regex": "(?:[\\t ]*)(\\bLH\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "100001",
+      "funcode": null
+    },
+    {
+      "name": "Load word unsigned",
+      "regex": "(?:[\\t ]*)(\\bLWU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "100111",
+      "funcode": null
+    },
+    {
+      "name": "Load byte unsigned",
+      "regex": "(?:[\\t ]*)(\\bLBU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "100100",
+      "funcode": null
+    },
+    {
+      "name": "Load halfword unsigned",
+      "regex": "(?:[\\t ]*)(\\bLHU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "100101",
+      "funcode": null
+    },
+    {
+      "name": "Store byte",
+      "regex": "(?:[\\t ]*)(\\bSB\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "101000",
+      "funcode": null
+    },
+    {
+      "name": "Store halfword",
+      "regex": "(?:[\\t ]*)(\\bSH\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(?:(-?\\d+)(?:\\([\\t ]*(\\d+?)[\\t ]*\\)))(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 4, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "101001",
+      "funcode": null
+    },
+    {
+      "name": "Add immediate",
+      "regex": "(?:[\\t ]*)(\\bADDI\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001000",
+      "funcode": null
+    },
+    {
+      "name": "Add immediate unsigned",
+      "regex": "(?:[\\t ]*)(\\bADDIU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001001",
+      "funcode": null
+    },
+    {
+      "name": "And immediate",
+      "regex": "(?:[\\t ]*)(\\bANDI\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001100",
+      "funcode": null
+    },
+    {
+      "name": "Or immediate",
+      "regex": "(?:[\\t ]*)(\\bORI\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001101",
+      "funcode": null
+    },
+    {
+      "name": "Xor immediate",
+      "regex": "(?:[\\t ]*)(\\bXORI\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001110",
+      "funcode": null
+    },
+    {
+      "name": "Load upper immediate",
+      "regex": "(?:[\\t ]*)(\\bLUI\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 16 }
+      ],
+      "opcode": "00111100000",
+      "funcode": null
+    },
+    {
+      "name": "Set if less than immediate",
+      "regex": "(?:[\\t ]*)(\\bSLTI\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001010",
+      "funcode": null
+    },
+    {
+      "name": "Set if less than immediate unsigned",
+      "regex": "(?:[\\t ]*)(\\bSLTIU\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "001011",
+      "funcode": null
+    },
+    {
+      "name": "Branch not equals",
+      "regex": "(?:[\\t ]*)(\\bBNE\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*,[\\t ]*?)(-?\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 2, "nbits": 5 },
+        { "group": 3, "nbits": 5 },
+        { "group": 4, "nbits": 16 }
+      ],
+      "opcode": "000101",
+      "funcode": null
+    },
+    {
+      "name": "Jump and link",
+      "regex": "(?:[\\t ]*)(\\bJAL\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [{ "group": 2, "nbits": 26 }],
+      "opcode": "000011",
+      "funcode": null
+    },
+    {
+      "name": "Jump register",
+      "regex": "(?:[\\t ]*)(\\bJR\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [{ "group": 2, "nbits": 5 }],
+      "opcode": "000000",
+      "funcode": "000000000000000001000"
+    },
+    {
+      "name": "Jump and link register",
+      "regex": "(?:[\\t ]*)(\\bJALR\\b)(?:[\\t ]+?)(\\d+)(?:[\\t ]*,[\\t ]*?)(\\d+)(?:[\\t ]*(?=\\n)?)",
+      "replace": [
+        { "group": 3, "nbits": 5 },
+        { "group": 2, "nbits": 10 }
+      ],
+      "opcode": "000000",
+      "funcode": "00000001001"
+    },
+    {
+      "name": "Nop",
+      "regex": "(?:[\\t ]*)(\\bNOP\\b)(?:[\\t ]*(?=\\n)?)",
+      "replace": [],
+      "opcode": "111111",
+      "funcode": "00000000000000000000000000"
+    },
+    {
+      "name": "Halt",
+      "regex": "(?:[\\t ]*)(\\bHLT\\b)(?:[\\t ]*(?=\\n)?)",
+      "replace": [],
+      "opcode": "101010",
+      "funcode": "11111111111111111111111111"
+    }
+  ]
+}

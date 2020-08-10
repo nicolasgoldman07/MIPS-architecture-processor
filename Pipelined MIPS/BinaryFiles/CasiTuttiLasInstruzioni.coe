@@ -1,0 +1,75 @@
+addi  10, 0, 10   // guardo reg0 + 10 = 10 en reg10
+sw    10, 10(2)   // store reg10 en (dm10 + 2 offset =) 12dm
+lw    23, 12(0)   // load reg12 DM en reg23 RF
+add   12, 10, 2   // guardo reg10 + reg2 en reg12
+addi  10, 10, 1   // guardo reg10 + reg1 en reg10
+bne   12, 10, -2  // ->  12 == 11? --> 12==12?
+lui   20, 225     // guardo 225 en reg 20
+andi  21, 20, 3   // guardo reg20 && 3 = 1
+beq   1, 21, 3    // debería saltar unas inst
+addi  2, 0, 1
+addi  2, 0, 2
+addi  2, 0, 3
+ori   2, 20, 6    // debería guardar un 231 en reg2
+j     17          // me voy a la primer addi
+addi  2, 0, 1
+addi  2, 0, 2
+addi  2, 0, 3
+addi  2, 0, 1     //salto hasta aca
+addi  2, 0, 500
+addi  10, 0, 13
+
+//Hazard Det Unit
+lw 4,12(0)   //carga un 10 en el reg4 RF
+add 27,4,20  //aca se deberia generar un bubble - guarda 235 en 27
+or 28,2,4   //guarda un 510 en reg28
+add 6,4,4   //guardo 20 en reg6
+sw 27,6(0)  //store 235 del reg27 en el reg6 del DM
+lw 29,6(0)  //traigo el 235 del reg6 DM, al reg29 RF
+
+//Cortocircuito
+sub 2,5,1   //guardo 4 en reg2
+or 12,2,5   //guardo 5 en el reg12
+and 13,2,2  //guardo 4 en el reg13
+add 14,2,2  //guardo 8 en reg14
+sw 2,1(5)   //guardo 4 en reg6 DM
+lw 16,2(2)  //traigo un 4 del reg6 DM, al reg16 RF
+
+
+jr    10          // jump to inst in reg10 = 13
+
+
+
+200a000a,
+ac4a000a,
+8c17000c,
+01426020,
+214a0001,
+158afffe,
+3c1400e1,
+32950003,
+10350003,
+20020001,
+20020002,
+20020003,
+36820006,
+08000011,
+20020001,
+20020002,
+20020003,
+20020001,
+200201f4,
+200a000d,
+8c04000c,
+0094d820,
+0044e025,
+00843020,
+ac1b0006,
+8c1d0006,
+00a11022,
+00456025,
+00426824,
+00427020,
+aca20001,
+8c500002,
+01400008;

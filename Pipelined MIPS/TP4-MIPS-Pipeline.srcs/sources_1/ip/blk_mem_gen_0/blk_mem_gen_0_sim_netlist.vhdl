@@ -1,11 +1,11 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Tue Jul 14 21:44:06 2020
+-- Date        : Sun Jul 12 19:36:25 2020
 -- Host        : win10-nico running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {C:/Users/Nico/Documents/Facultad/Arquitectura/Trabajos
---               Prcticos/TP4-MIPS-Pipeline/TP4-MIPS-Pipeline.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_sim_netlist.vhdl}
--- Design      : blk_mem_gen_0
+-- Command     : write_vhdl -force -mode funcsim -rename_top blk_mem_gen_0 -prefix
+--               blk_mem_gen_0_ InstructionMemory_sim_netlist.vhdl
+-- Design      : InstructionMemory
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a35ticpg236-1L
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity blk_mem_gen_0_blk_mem_gen_prim_wrapper_init is
+entity blk_mem_gen_0_blk_mem_gen_prim_wrapper is
   port (
     douta : out STD_LOGIC_VECTOR ( 31 downto 0 );
     clka : in STD_LOGIC;
@@ -22,21 +22,17 @@ entity blk_mem_gen_0_blk_mem_gen_prim_wrapper_init is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of blk_mem_gen_0_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
-end blk_mem_gen_0_blk_mem_gen_prim_wrapper_init;
+end blk_mem_gen_0_blk_mem_gen_prim_wrapper;
 
-architecture STRUCTURE of blk_mem_gen_0_blk_mem_gen_prim_wrapper_init is
-  signal \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_32\ : STD_LOGIC;
-  signal \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_33\ : STD_LOGIC;
-  signal \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_34\ : STD_LOGIC;
-  signal \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_35\ : STD_LOGIC;
-  attribute bmm_info_memory_device : string;
-  attribute bmm_info_memory_device of \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram\ : label is "[31:0][0:511]";
+architecture STRUCTURE of blk_mem_gen_0_blk_mem_gen_prim_wrapper is
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_32\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_33\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_34\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_35\ : STD_LOGIC;
   attribute box_type : string;
-  attribute box_type of \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram\ : label is "PRIMITIVE";
+  attribute box_type of \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram\ : label is "PRIMITIVE";
 begin
-\DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram\: unisim.vcomponents.RAMB18E1
+\DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram\: unisim.vcomponents.RAMB18E1
     generic map(
       DOA_REG => 0,
       DOB_REG => 0,
@@ -48,11 +44,11 @@ begin
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"329500033C1400E1158AFFFE214A0001014260208C17000CAC4A000A200A000A",
-      INIT_01 => X"2002000220020001080000113682000620020003200200022002000110350003",
-      INIT_02 => X"008430200044E0250094D8208C04000C200A000D200201F42002000120020003",
-      INIT_03 => X"8C500002ACA2000100427020004268240045602500A110228C1D0006AC1B0006",
-      INIT_04 => X"0000000000000000000000000000000000000000000000000000000001400008",
+      INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -153,10 +149,10 @@ begin
       DIPBDIP(1 downto 0) => B"00",
       DOADO(15 downto 0) => douta(15 downto 0),
       DOBDO(15 downto 0) => douta(31 downto 16),
-      DOPADOP(1) => \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_32\,
-      DOPADOP(0) => \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_33\,
-      DOPBDOP(1) => \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_34\,
-      DOPBDOP(0) => \DEVICE_7SERIES.WITH_BMM_INFO.SP.WIDE_PRIM18.ram_n_35\,
+      DOPADOP(1) => \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_32\,
+      DOPADOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_33\,
+      DOPBDOP(1) => \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_34\,
+      DOPBDOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_35\,
       ENARDEN => '1',
       ENBWREN => '1',
       REGCEAREGCE => '0',
@@ -182,13 +178,11 @@ entity blk_mem_gen_0_blk_mem_gen_prim_width is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of blk_mem_gen_0_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end blk_mem_gen_0_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of blk_mem_gen_0_blk_mem_gen_prim_width is
 begin
-\prim_init.ram\: entity work.blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
+\prim_noinit.ram\: entity work.blk_mem_gen_0_blk_mem_gen_prim_wrapper
      port map (
       addra(6 downto 0) => addra(6 downto 0),
       clka => clka,
@@ -209,8 +203,6 @@ entity blk_mem_gen_0_blk_mem_gen_generic_cstr is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of blk_mem_gen_0_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end blk_mem_gen_0_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of blk_mem_gen_0_blk_mem_gen_generic_cstr is
@@ -236,8 +228,6 @@ entity blk_mem_gen_0_blk_mem_gen_top is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of blk_mem_gen_0_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end blk_mem_gen_0_blk_mem_gen_top;
 
 architecture STRUCTURE of blk_mem_gen_0_blk_mem_gen_top is
@@ -263,8 +253,6 @@ entity blk_mem_gen_0_blk_mem_gen_v8_4_4_synth is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of blk_mem_gen_0_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
 end blk_mem_gen_0_blk_mem_gen_v8_4_4_synth;
 
 architecture STRUCTURE of blk_mem_gen_0_blk_mem_gen_v8_4_4_synth is
@@ -431,13 +419,13 @@ entity blk_mem_gen_0_blk_mem_gen_v8_4_4 is
   attribute C_INITB_VAL : string;
   attribute C_INITB_VAL of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "0";
   attribute C_INIT_FILE : string;
-  attribute C_INIT_FILE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_0.mem";
+  attribute C_INIT_FILE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "InstructionMemory.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_0.mif";
+  attribute C_INIT_FILE_NAME of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 1;
+  attribute C_LOAD_INIT_FILE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_MUX_PIPELINE_STAGES : integer;
@@ -498,8 +486,6 @@ entity blk_mem_gen_0_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_WIDTH_B of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_v8_4_4";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "yes";
 end blk_mem_gen_0_blk_mem_gen_v8_4_4;
@@ -687,7 +673,7 @@ entity blk_mem_gen_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of blk_mem_gen_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of blk_mem_gen_0 : entity is "blk_mem_gen_0,blk_mem_gen_v8_4_4,{}";
+  attribute CHECK_LICENSE_TYPE of blk_mem_gen_0 : entity is "InstructionMemory,blk_mem_gen_v8_4_4,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of blk_mem_gen_0 : entity is "yes";
   attribute x_core_info : string;
@@ -798,13 +784,13 @@ architecture STRUCTURE of blk_mem_gen_0 is
   attribute C_INITB_VAL : string;
   attribute C_INITB_VAL of U0 : label is "0";
   attribute C_INIT_FILE : string;
-  attribute C_INIT_FILE of U0 : label is "blk_mem_gen_0.mem";
+  attribute C_INIT_FILE of U0 : label is "InstructionMemory.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of U0 : label is "blk_mem_gen_0.mif";
+  attribute C_INIT_FILE_NAME of U0 : label is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of U0 : label is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of U0 : label is 1;
+  attribute C_LOAD_INIT_FILE of U0 : label is 0;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of U0 : label is 0;
   attribute C_MUX_PIPELINE_STAGES : integer;
