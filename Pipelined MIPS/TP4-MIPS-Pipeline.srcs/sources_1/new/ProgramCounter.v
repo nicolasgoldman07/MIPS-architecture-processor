@@ -11,6 +11,7 @@ module ProgramCounter
   input       [N_BUS_IN-1:0]    i_pc,
   input                         i_clk, i_reset,
   input                         i_pcWrite,
+  input                         i_pcHalt,
   // SALIDAS: 
   output      [N_BUS_IN-1:0]    o_pc
 );
@@ -23,7 +24,7 @@ module ProgramCounter
         begin
             regR <= 32'b0;
         end
-      else if (!i_pcWrite || !i_global_en )
+      else if (!i_pcWrite || !i_global_en || i_pcHalt )
         begin
             regR <= o_pc;   
         end

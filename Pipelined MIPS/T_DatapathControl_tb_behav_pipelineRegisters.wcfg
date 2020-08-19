@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="436000fs"></ZoomStartTime>
-      <ZoomEndTime time="621001fs"></ZoomEndTime>
-      <Cursor1Time time="1000000fs"></Cursor1Time>
+      <ZoomStartTime time="685800fs"></ZoomStartTime>
+      <ZoomEndTime time="813401fs"></ZoomEndTime>
+      <Cursor1Time time="714600fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="158"></ValueColumnWidth>
+      <ValueColumnWidth column_width="150"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="64" />
+   <WVObjectSize size="71" />
    <wvobject fp_name="/T_DatapathControl_tb/reading_inst" type="array">
       <obj_property name="ElementShortName">reading_inst[31:0]</obj_property>
       <obj_property name="ObjectShortName">reading_inst[31:0]</obj_property>
@@ -79,6 +79,10 @@
    <wvobject fp_name="/T_DatapathControl_tb/i_global_en" type="logic">
       <obj_property name="ElementShortName">i_global_en</obj_property>
       <obj_property name="ObjectShortName">i_global_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_control_pcSrc" type="logic">
+      <obj_property name="ElementShortName">w_control_pcSrc</obj_property>
+      <obj_property name="ObjectShortName">w_control_pcSrc</obj_property>
    </wvobject>
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/IF_ID1/i_pcAdd_IF" type="array">
       <obj_property name="ElementShortName">i_pcAdd_IF[31:0]</obj_property>
@@ -280,6 +284,18 @@
       <obj_property name="ElementShortName">w_out_exMem_branch</obj_property>
       <obj_property name="ObjectShortName">w_out_exMem_branch</obj_property>
    </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/HazardDetectionUnit1/o_hd_ifIdWrite" type="logic">
+      <obj_property name="ElementShortName">o_hd_ifIdWrite</obj_property>
+      <obj_property name="ObjectShortName">o_hd_ifIdWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/HazardDetectionUnit1/o_hd_muxStall" type="logic">
+      <obj_property name="ElementShortName">o_hd_muxStall</obj_property>
+      <obj_property name="ObjectShortName">o_hd_muxStall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/HazardDetectionUnit1/o_hd_pcWrite" type="logic">
+      <obj_property name="ElementShortName">o_hd_pcWrite</obj_property>
+      <obj_property name="ObjectShortName">o_hd_pcWrite</obj_property>
+   </wvobject>
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_out_ALUZero" type="logic">
       <obj_property name="ElementShortName">w_out_ALUZero</obj_property>
       <obj_property name="ObjectShortName">w_out_ALUZero</obj_property>
@@ -289,6 +305,32 @@
       <obj_property name="ElementShortName">w_control_pcSrc</obj_property>
       <obj_property name="ObjectShortName">w_control_pcSrc</obj_property>
       <obj_property name="label">AND BRANCH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/executingBranch" type="logic">
+      <obj_property name="ElementShortName">executingBranch</obj_property>
+      <obj_property name="ObjectShortName">executingBranch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/pc_halt" type="logic">
+      <obj_property name="ElementShortName">pc_halt</obj_property>
+      <obj_property name="ObjectShortName">pc_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/halt_detected" type="logic">
+      <obj_property name="ElementShortName">halt_detected</obj_property>
+      <obj_property name="ObjectShortName">halt_detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_idEx_working" type="logic">
+      <obj_property name="ElementShortName">w_idEx_working</obj_property>
+      <obj_property name="ObjectShortName">w_idEx_working</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_exMem_working" type="logic">
+      <obj_property name="ElementShortName">w_exMem_working</obj_property>
+      <obj_property name="ObjectShortName">w_exMem_working</obj_property>
+   </wvobject>
+   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/w_memWb_working" type="logic">
+      <obj_property name="ElementShortName">w_memWb_working</obj_property>
+      <obj_property name="ObjectShortName">w_memWb_working</obj_property>
    </wvobject>
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/MEM_WB1/i_readDataMem_MEM" type="array">
       <obj_property name="ElementShortName">i_readDataMem_MEM[31:0]</obj_property>
@@ -351,20 +393,6 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/dina" type="array">
-      <obj_property name="ElementShortName">dina[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/addra" type="array">
-      <obj_property name="ElementShortName">addra[31:0]</obj_property>
-      <obj_property name="ObjectShortName">addra[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/wea" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">wea[3:0]</obj_property>
-      <obj_property name="ObjectShortName">wea[3:0]</obj_property>
-      <obj_property name="label">W_EN DATAMEM</obj_property>
-   </wvobject>
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/DataMemory1/inst/\native_mem_mapped_module.blk_mem_gen_v8_4_4_inst /memory" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">memory[0:127][31:0]</obj_property>
@@ -372,6 +400,7 @@
       <obj_property name="label">DATA MEMORY</obj_property>
       <obj_property name="CustomSignalColor">#A52A2A</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/T_DatapathControl_tb/T_DatapathControl_tb/InstMemory1/inst/\native_mem_mapped_module.blk_mem_gen_v8_4_4_inst /memory" type="array">
       <obj_property name="DisplayName">label</obj_property>

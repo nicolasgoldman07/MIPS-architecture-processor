@@ -1,0 +1,23 @@
+addi  1, 0, 1     // 1 en reg1
+addi  2, 0, 2     // 2 en reg2
+addi  3, 0, 3     // 3 en reg3
+addi  4, 0, 4     // 4 en reg4
+addi  5, 0, 5     // 5 en reg5
+addi  10, 0, 10   // 10 en reg10
+addi  13, 0, 13   // 10 en reg10
+jr    13    
+addi  20, 0, 20   // 1 en reg1
+addi  21, 0, 21   // 2 en reg2
+addi  22, 0, 22   // 3 en reg3
+addi  23, 0, 23   // 4 en reg4
+
+// DATA HAZARDS: Dependencias de resultados previos para nuevas inst
+add   2, 5, 3     // 8 en reg2 (JR)
+sub   15, 2, 3    // 5 en reg15
+andi  16, 2, 31   // 8 en reg16
+ori   17, 5, 2    // 7 en reg17
+or    18, 17, 10  // 15 en reg18
+andi  1, 17, 163  // 3 en reg1
+slt   18, 17, 17  // 0 en reg18
+slt   19, 1, 17   // 1 en reg19       
+hlt

@@ -12,6 +12,8 @@ module T_DatapathControl_tb();
   reg       [1:0]       program_state;
 
   integer               instructions_file, end_file;
+  
+  wire                  halt;
    
     T_DatapathControl T_DatapathControl_tb
     (
@@ -22,14 +24,16 @@ module T_DatapathControl_tb();
         
         .i_inst_instMem (reading_inst),
         .i_wEn_instMem (writing_mem_en),
-        .i_addr_instMem (writing_mem_addr)
+        .i_addr_instMem (writing_mem_addr),
+        
+        .o_halt (halt)
     );
 
     localparam 
       load_mem  = 2'b00,
       init      = 2'b01,
       ejec      = 2'b10,
-      stepEn    = 1'b1;     // step by step mode enable
+      stepEn    = 1'b0;     // step by step mode enable
 
     initial
     begin
@@ -38,7 +42,7 @@ module T_DatapathControl_tb();
 
     initial
         begin
-          instructions_file = $fopen("C:\\Users\\Nico\\Documents\\Facultad\\Arquitectura\\TP4 - MIPS - Final\\MIPS-architecture-processor\\Pipelined MIPS\\BinaryFiles\\inst-file.b", "r");
+          instructions_file = $fopen("C:\\Users\\Nico\\Desktop\\TP Final - Arqui\\MIPS-architecture-processor\\Pipelined MIPS\\BinaryFiles\\inst-file.b", "r");
           if (!instructions_file) $stop;
           
           program_state     =   load_mem;
@@ -51,12 +55,19 @@ module T_DatapathControl_tb();
 		  #5      i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #15     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #25     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
-		  #150    i_stepEnableBtn = 1'b1;  /*       #2      i_stepEnableBtn = 1'b0;
+		  #20     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #100    i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #5      i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #5      i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
-		  #100    i_stepEnableBtn = 1'b1; */
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #100    i_stepEnableBtn = 1'b1; 
 		  
 		end
 	
@@ -107,7 +118,11 @@ module T_DatapathControl_tb();
         end
     end
 
-        
+    always @(posedge i_clk)
+      begin
+        if(halt == 1)
+          $finish;
+      end
   
     /* CLK SIGNAL */	
     always  
@@ -115,6 +130,4 @@ module T_DatapathControl_tb();
         #1  i_clk = ~i_clk;
     end
     
-  initial
-        #5000 $finish;
 endmodule

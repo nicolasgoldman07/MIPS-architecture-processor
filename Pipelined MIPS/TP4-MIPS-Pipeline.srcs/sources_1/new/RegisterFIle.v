@@ -23,18 +23,9 @@ module RegisterFile
   generate
     integer i;
         initial   
-            for (i = 3; i < 32; i = i + 1)
+            for (i = 0; i < 32; i = i + 1)
                dataRegisters[i] = 32'd0;
   endgenerate 
-  
-  initial
-    begin
-        dataRegisters[0] = 32'd0;
-        dataRegisters[1] = 32'd1;
-        dataRegisters[2] = 32'd2;
-        dataRegisters[3] = 32'd3;
-        dataRegisters[5] = 32'd5;
-    end
   
   always @(*)       
     begin

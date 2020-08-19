@@ -8,6 +8,7 @@ module ID_EX
 )
 (
   input                         i_global_en, i_clk, i_reset, i_branchNop,
+  output                        o_idEx_working,
   // CONTROL WB:
   input                         i_ctrl_memtoReg_ID,
   input                         i_ctrl_regWrite_ID,
@@ -58,9 +59,13 @@ module ID_EX
   
   // FULL INST
   input       [N_BUS_IN-1:0]    i_fullInstr_ID,
-  output reg  [N_BUS_IN-1:0]    o_fullInstr_EX
+  output reg  [N_BUS_IN-1:0]    o_fullInstr_EX,
+  
+  output wire                   o_not_empty
 
 );
+
+  reg                           working;
   
   always @(posedge i_clk) 
     begin
@@ -128,5 +133,22 @@ module ID_EX
           o_fullInstr_EX            <= i_fullInstr_ID;
         end
     end
+    
+    always@ (*)
+        begin
+            working <= (i_ctrl_ALUOp0_ID | 
+                        i_ctrl_ALUOp1_ID |
+                        i_ctrl_ALUSrc_ID | 
+                        i_ctrl_regDst_ID | 
+                        i_ctrl_branch_ID |
+                        i_ctrl_memWrite_ID | 
+                        i_ctrl_memRead_ID | 
+                        i_ctrl_memtoReg_ID | 
+                        i_ctrl_regWrite_ID |
+                        i_ctrl_notEqBranch_ID |
+                        i_ctrl_jumpReg_ID | 
+                        i_ctrl_jump_ID);
+        end
 
+    assign o_idEx_working = working;
 endmodule

@@ -5,38 +5,4 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ProgramCounter
-Compiling module xil_defaultlib.PcAdder
-Compiling module xil_defaultlib.Mux2Inputs
-Compiling module xil_defaultlib.IF_ID
-Compiling module xil_defaultlib.HazardDetectionUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.SignExtend
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.Mux2Inputs9bit
-Compiling module xil_defaultlib.ID_EX
-Compiling module xil_defaultlib.Mux3Inputs
-Compiling module xil_defaultlib.ShiftLeft2
-Compiling module xil_defaultlib.BranchAdder
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.ALUControl
-Compiling module xil_defaultlib.Mux2Inputs5bit
-Compiling module xil_defaultlib.ForwardingUnit
-Compiling module xil_defaultlib.EX_MEM
-Compiling module xil_defaultlib.MEM_WB
-Compiling module xil_defaultlib.ShiftLeft2Jump
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
-Compiling module xil_defaultlib.blk_mem_gen_0
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
-Compiling module xil_defaultlib.blk_mem_gen_1
-Compiling module xil_defaultlib.T_DatapathControl
-Compiling module xil_defaultlib.T_DatapathControl_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot T_DatapathControl_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

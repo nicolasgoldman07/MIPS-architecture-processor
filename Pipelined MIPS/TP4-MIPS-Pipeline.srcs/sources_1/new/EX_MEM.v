@@ -8,6 +8,7 @@ module EX_MEM
 )
 (
   input                         i_global_en, i_clk, i_reset, i_branchNop,
+  output                        o_exMem_working,
   // CONTROL WB:
   input                         i_ctrl_memtoReg_EX,
   input                         i_ctrl_regWrite_EX,
@@ -41,6 +42,8 @@ module EX_MEM
   output reg    [N_BUS_IN-1:0]  o_readData2_MEM,
   output reg    [N_BUS_MUX-1:0] o_muxRegDst_MEM
 );
+
+  reg                           working;
   
   always @(posedge i_clk) 
     begin
@@ -91,5 +94,20 @@ module EX_MEM
           o_muxRegDst_MEM           <= i_muxRegDst_EX;
         end
     end
+    
+    always@ (*)
+    begin
+        working <= (/*i_ctrl_ALUZero_EX |*/
+                    i_ctrl_branch_EX |
+                    i_ctrl_memWrite_EX | 
+                    i_ctrl_memRead_EX | 
+                    i_ctrl_memtoReg_EX | 
+                    i_ctrl_regWrite_EX |
+                    i_ctrl_notEqBranch_EX |
+                    i_ctrl_jumpReg_EX | 
+                    i_ctrl_jump_EX);
+    end
+    
+    assign o_exMem_working = working;
 
 endmodule

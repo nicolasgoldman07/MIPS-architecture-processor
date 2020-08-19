@@ -1,0 +1,4 @@
+addi  10, 0, 10   // guardo reg0 + 10 = 10 en reg10
+sw    10, 47(0)   // store reg10 en (dm10 + 2 offset =) 12dm
+lw    23, 45(2)   // load reg12 DM en reg23 RF
+add   12, 10, 2   // guardo reg10 + reg2 en reg12

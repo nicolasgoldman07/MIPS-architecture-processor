@@ -1,0 +1,25 @@
+addi  1, 0, 1     // 1 en reg1
+addi  2, 0, 2     // 2 en reg2
+addi  3, 0, 3     // 3 en reg3
+addi  4, 0, 4     // 4 en reg4
+addi  5, 0, 5     // 5 en reg5
+addi  10, 0, 10   // 10 en reg10
+
+// Control Hazards - Branches - pag 317
+sw    2, 10(3)    // 2 en dm13
+add   11, 5, 5    // 10 en reg11
+beq   10, 11, 3   // salta +3 (SLT)
+sub   12, 2, 1
+and   13, 3, 1
+nor   14, 1, 1
+slt   15, 2, 10   // 1 en reg15
+lw    4, 10(3)    // Busco el data memory address 13 - deberia ser 2, lo guardo en reg 4
+addi  16, 4, 18   // 20 en reg16
+add   10, 10, 5
+bne   16, 10, -2
+addi  20, 0, 20     
+addi  21, 0, 21     
+addi  22, 0, 22     
+addi  23, 0, 23     
+addi  24, 0, 24     
+hlt
