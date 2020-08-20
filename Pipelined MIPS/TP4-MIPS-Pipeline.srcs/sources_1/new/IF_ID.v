@@ -6,7 +6,7 @@ module IF_ID
   parameter	                    N_BUS_IN 	= 32
 )
 (
-  input                         i_clk, i_reset, i_branchNop,  
+  input                         i_global_en, i_clk, i_reset, i_branchNop,  
   input       [N_BUS_IN-1:0]    i_im_IF,
   input       [N_BUS_IN-1:0]    i_pcAdd_IF,
   input                         i_hd_ifIdWrite,
@@ -17,14 +17,14 @@ module IF_ID
   reg         [N_BUS_IN-1:0]    reg_im_ID;
   reg         [N_BUS_IN-1:0]    reg_pcAdd_ID;
   
-  always @(negedge i_clk) 
+  always @(posedge i_clk) 
     begin
       if (i_reset)
         begin
           reg_im_ID     <= 32'b0;
           reg_pcAdd_ID  <= 32'b0;
         end
-      else if (i_branchNop)
+      else if (i_branchNop || !i_global_en)
         begin
             reg_im_ID     <= {6'b111111, 26'd0};
             reg_pcAdd_ID  <= i_pcAdd_IF;

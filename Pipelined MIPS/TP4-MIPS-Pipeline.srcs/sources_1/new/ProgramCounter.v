@@ -7,22 +7,24 @@ module ProgramCounter
 )
 (
   // ENTRADAS:
+  input                         i_global_en,
   input       [N_BUS_IN-1:0]    i_pc,
   input                         i_clk, i_reset,
   input                         i_pcWrite,
+  input                         i_pcHalt,
   // SALIDAS: 
   output      [N_BUS_IN-1:0]    o_pc
 );
 
   reg         [N_BUS_IN-1:0]    regR;
   
-  always @(negedge i_clk) 
+  always @(posedge i_clk) 
     begin
       if (i_reset)
         begin
             regR <= 32'b0;
         end
-      else if (!i_pcWrite)
+      else if (!i_pcWrite || !i_global_en || i_pcHalt )
         begin
             regR <= o_pc;   
         end
@@ -35,3 +37,4 @@ module ProgramCounter
   assign o_pc = regR;
 
 endmodule
+

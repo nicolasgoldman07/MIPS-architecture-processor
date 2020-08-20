@@ -1,0 +1,21 @@
+j     4           // jump hasta ln5
+addi  1, 0, 1     // 1 en reg1
+addi  2, 0, 2     // 2 en reg2
+addi  3, 0, 3     // 3 en reg3
+addi  4, 0, 4     // 4 en reg4
+addi  5, 0, 5     // 5 en reg5
+addi  10, 0, 10   // 10 en reg10
+sw    1, 1(0)     // 1 en dm1
+sw    3, 3(0)     // 3 en dm3
+sw    4, 4(0)     // 4 en dm4
+sw    10, 10(0)   // 10 en dm10
+
+// STALLS (pag 313 - fig 4.58)
+lw    2, 4(0)     // 4 en reg2
+and   4, 2, 3     // 0 en reg4
+ori   8, 2, 8     // 12 en reg8
+add   9, 4, 2     // 4 en reg9
+addi  3, 3, 1     // (4 en reg3) + (5 en reg3)
+bne   3, 5, -2
+addi  20, 9, 2
+hlt

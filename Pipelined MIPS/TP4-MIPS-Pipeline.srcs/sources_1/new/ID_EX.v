@@ -7,7 +7,8 @@ module ID_EX
   parameter                     N_BUS_MUX   = 5
 )
 (
-  input                         i_clk, i_reset, i_branchNop,
+  input                         i_global_en, i_clk, i_reset, i_branchNop,
+  output                        o_idEx_working,
   // CONTROL WB:
   input                         i_ctrl_memtoReg_ID,
   input                         i_ctrl_regWrite_ID,
@@ -17,13 +18,13 @@ module ID_EX
   input                         i_ctrl_jumpReg_ID,
   input                         i_ctrl_jump_ID,
   input                         i_ctrl_memRead_ID,
-  input                         i_ctrl_memWrite_ID,
+  input         [3:0]           i_ctrl_memWrite_ID,
   input                         i_ctrl_branch_ID,
   input                         i_ctrl_notEqBranch_ID,
   output reg                    o_ctrl_jumpReg_EX,
   output reg                    o_ctrl_jump_EX,
   output reg                    o_ctrl_memRead_EX,
-  output reg                    o_ctrl_memWrite_EX,
+  output reg    [3:0]           o_ctrl_memWrite_EX,
   output reg                    o_ctrl_branch_EX,
   output reg                    o_ctrl_notEqBranch_EX,
 
@@ -58,11 +59,15 @@ module ID_EX
   
   // FULL INST
   input       [N_BUS_IN-1:0]    i_fullInstr_ID,
-  output reg  [N_BUS_IN-1:0]    o_fullInstr_EX
+  output reg  [N_BUS_IN-1:0]    o_fullInstr_EX,
+  
+  output wire                   o_not_empty
 
 );
+
+  reg                           working;
   
-  always @(negedge i_clk) 
+  always @(posedge i_clk) 
     begin
       if (i_reset)
         begin
@@ -71,7 +76,7 @@ module ID_EX
           o_ctrl_jumpReg_EX         <= 1'b0;
           o_ctrl_jump_EX            <= 1'b0;
           o_ctrl_memRead_EX         <= 1'b0;
-          o_ctrl_memWrite_EX        <= 1'b0;
+          o_ctrl_memWrite_EX        <= 4'd0;
           o_ctrl_branch_EX          <= 1'b0;
           o_ctrl_notEqBranch_EX     <= 1'b0;
           o_ctrl_ALUSrc_EX          <= 1'b0;
@@ -95,20 +100,13 @@ module ID_EX
           o_ctrl_jumpReg_EX         <= 1'b0;
           o_ctrl_jump_EX            <= 1'b0;
           o_ctrl_memRead_EX         <= 1'b0;
-          o_ctrl_memWrite_EX        <= 1'b0;
+          o_ctrl_memWrite_EX        <= 4'd0;
           o_ctrl_branch_EX          <= 1'b0;
           o_ctrl_notEqBranch_EX     <= 1'b0;          
           o_ctrl_ALUSrc_EX          <= 1'b0;
           o_ctrl_ALUOp0_EX          <= 1'b0;
           o_ctrl_ALUOp1_EX          <= 1'b0;
           o_ctrl_regDst_EX          <= 1'b0;
-//          o_pcAdd_EX                <= 32'b0;
-//          o_readData1_EX            <= 32'b0;
-//          o_readData2_EX            <= 32'b0;
-//          o_signExtend_EX           <= 32'b0;
-//          o_muxWrReg0_EX            <= 5'b0;
-//          o_muxWrReg1_EX            <= 5'b0;
-//          o_readReg1_EX             <= 5'b0;
         end
       else
         begin
@@ -135,5 +133,22 @@ module ID_EX
           o_fullInstr_EX            <= i_fullInstr_ID;
         end
     end
+    
+    always@ (*)
+        begin
+            working <= (i_ctrl_ALUOp0_ID | 
+                        i_ctrl_ALUOp1_ID |
+                        i_ctrl_ALUSrc_ID | 
+                        i_ctrl_regDst_ID | 
+                        i_ctrl_branch_ID |
+                        i_ctrl_memWrite_ID | 
+                        i_ctrl_memRead_ID | 
+                        i_ctrl_memtoReg_ID | 
+                        i_ctrl_regWrite_ID |
+                        i_ctrl_notEqBranch_ID |
+                        i_ctrl_jumpReg_ID | 
+                        i_ctrl_jump_ID);
+        end
 
+    assign o_idEx_working = working;
 endmodule

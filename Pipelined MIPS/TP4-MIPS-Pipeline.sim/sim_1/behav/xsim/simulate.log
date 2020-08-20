@@ -1,0 +1,7 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Block Memory Generator module T_DatapathControl_tb.T_DatapathControl_tb.InstMemory1.inst.native_mem_mapped_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module T_DatapathControl_tb.T_DatapathControl_tb.DataMemory1.inst.native_mem_mapped_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$finish called at time : 430 ns : File "C:/Users/Nico/Desktop/TP Final - Arqui/MIPS-architecture-processor/Pipelined MIPS/TP4-MIPS-Pipeline.srcs/sim_1/new/T_DatapathControl_tb.v" Line 124
