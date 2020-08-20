@@ -33,7 +33,7 @@ module T_DatapathControl_tb();
       load_mem  = 2'b00,
       init      = 2'b01,
       ejec      = 2'b10,
-      stepEn    = 1'b0;     // step by step mode enable
+      stepEn    = 1'b1;     // step by step mode enable
 
     initial
     begin
@@ -61,12 +61,12 @@ module T_DatapathControl_tb();
 		  #5      i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  /*#50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
 		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
-		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
-		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;
+		  #50     i_stepEnableBtn = 1'b1;         #2      i_stepEnableBtn = 1'b0;*/
 		  #100    i_stepEnableBtn = 1'b1; 
 		  
 		end
